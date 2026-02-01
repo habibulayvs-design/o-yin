@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neon Pong 🏓 - Klassik Tennis O'yini</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="game-container">
+        <!-- Header -->
+        <header>
+            <h1 class="game-title">NEON PONG</h1>
+            <p class="game-subtitle">Klassik Tennis O'yini</p>
+        </header>
+
+        <!-- Score Board -->
+        <div class="scoreboard">
+            <div class="score-item">
+                <span class="score-label">O'yinchi</span>
+                <span class="score-value" id="playerScore">0</span>
+            </div>
+            <div class="score-divider">:</div>
+            <div class="score-item">
+                <span class="score-label">Kompyuter</span>
+                <span class="score-value" id="aiScore">0</span>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <canvas id="pongCanvas"></canvas>
+
+        <!-- Controls Info -->
+        <div class="controls-info">
+            <div class="control-item">
+                <span class="control-icon">⌨️</span>
+                <span class="control-text">W/S yoki ↑/↓</span>
+            </div>
+            <div class="control-item">
+                <span class="control-icon">📱</span>
+                <span class="control-text">Ekranni bosing</span>
+            </div>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="game-over-screen">
+            <div class="game-over-content">
+                <h2 class="game-over-title">O'YIN TUGADI!</h2>
+                <p class="game-over-result" id="gameResult"></p>
+                <div class="final-score">
+                    <span id="finalPlayerScore">0</span>
+                    <span class="score-separator">-</span>
+                    <span id="finalAiScore">0</span>
+                </div>
+                <button class="restart-btn" onclick="restartGame()">
+                    <span class="btn-icon">🔄</span>
+                    <span>Qayta Boshlash</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Start Screen -->
+        <div id="startScreen" class="start-screen">
+            <div class="start-content">
+                <h2 class="start-title">NEON PONG</h2>
+                <p class="start-description">Birinchi 5 ochkoga yetgan g'olib!</p>
+                <div class="difficulty-selector">
+                    <h3>Qiyinlik darajasi:</h3>
+                    <div class="difficulty-buttons">
+                        <button class="difficulty-btn" onclick="setDifficulty('easy')">Oson</button>
+                        <button class="difficulty-btn active" onclick="setDifficulty('medium')">O'rta</button>
+                        <button class="difficulty-btn" onclick="setDifficulty('hard')">Qiyin</button>
+                    </div>
+                </div>
+                <button class="start-btn" onclick="startGame()">
+                    <span class="btn-icon">▶️</span>
+                    <span>Boshlash</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
